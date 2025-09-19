@@ -1,11 +1,57 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import "../styles/global.css";
+import { Image } from "astro:assets";
+import mail from "../assets/mail.svg";
+import x from "../assets/x.svg";
+import github from "../assets/github.svg";
+import linkedin from "../assets/linkedin.svg";
 ---
 
-<Layout>
-	<Welcome />
-</Layout>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Justin O'Connell | Fullstack Developer</title>
+    </head>
+    <body>
+        <!-- Wrapper -->
+        <div>
+            <header>
+                <!-- Title -->
+                <h1>Justin O'Connell - Fullstack Developer</h1>
+                <!-- Icons -->
+                <div class="flex flex-row">
+                    <div>
+                        <Image src={mail} alt="email address" class="size-9" />
+                    </div>
+                    <div>
+                        <Image src={x} alt="x profile" class="size-9" />
+                    </div>
+                    <div>
+                        <Image
+                            src={github}
+                            alt="github profile"
+                            class="size-9"
+                        />
+                    </div>
+                    <div>
+                        <Image
+                            src={linkedin}
+                            alt="linkedin profile"
+                            class="size-9"
+                        />
+                    </div>
+                </div>
+                <!-- Description -->
+                <p>Building fast and interactive apps for the web.</p>
+            </header>
+            <!-- Built Section -->
+            <section>
+                <!-- Heading -->
+                <h2>🛠️ What I've Built Recently</h2>
+                <div>
+                    <!-- Card -->
+                </div>
+            </section>
+        </div>
+    </body>
+</html>
