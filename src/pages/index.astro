@@ -1,10 +1,10 @@
 ---
 import "../styles/global.css";
 import { Image } from "astro:assets";
-import mail from "../assets/mail.svg";
-import x from "../assets/x.svg";
-import github from "../assets/github.svg";
-import linkedin from "../assets/linkedin.svg";
+import MailIcon from "../assets/mail.svg";
+import XIcon from "../assets/x.svg";
+import GithubIcon from "../assets/github.svg";
+import LinkedinIcon from "../assets/linkedin.svg";
 ---
 
 <html lang="en">
@@ -28,23 +28,25 @@ import linkedin from "../assets/linkedin.svg";
                 <!-- Icons -->
                 <div class="flex flex-row items-center mt-4 space-x-2.5">
                     <div>
-                        <Image src={mail} alt="email address" class="size-5" />
+                        <button id="copy-email">
+                            <MailIcon
+                                class="size-6 text-brand-accent hover:text-brand-primary transition-colors duration-100"
+                            />
+                        </button>
                     </div>
                     <div>
-                        <Image src={x} alt="x profile" class="size-5" />
-                    </div>
-                    <div>
-                        <Image
-                            src={github}
-                            alt="github profile"
-                            class="size-5"
+                        <XIcon
+                            class="size-6 text-brand-accent hover:text-brand-primary transition-colors duration-100"
                         />
                     </div>
                     <div>
-                        <Image
-                            src={linkedin}
-                            alt="linkedin profile"
-                            class="size-5"
+                        <GithubIcon
+                            class="size-6 text-brand-accent hover:text-brand-primary transition-colors duration-100"
+                        />
+                    </div>
+                    <div>
+                        <LinkedinIcon
+                            class="size-6 text-brand-accent hover:text-brand-primary transition-colors duration-100"
                         />
                     </div>
                 </div>
@@ -61,5 +63,16 @@ import linkedin from "../assets/linkedin.svg";
                 </div>
             </section>
         </div>
+
+        <script>
+            const mailButton = document.getElementById(
+                "copy-email",
+            ) as HTMLElement;
+            mailButton.addEventListener("click", async () => {
+                await navigator.clipboard.writeText(
+                    "itsjustinoconnell@gmail.com",
+                );
+            });
+        </script>
     </body>
 </html>
